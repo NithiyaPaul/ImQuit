@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.imquit">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    <uses-permission android:name="android.permission.READ_HISTORY_BOOKMARKS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.HomeActivity"></activity>
+        <activity android:name=".activity.GraphActivity" />
+        <activity android:name=".activity.AddictedAppActivity" />
+        <activity android:name=".activity.AddRestrictionActivity" />
+
+        <service
+            android:name=".service.SaveMyAppsService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".activity.BlockActivity"
+            android:theme="@style/FullScreen" />
+        <activity android:name=".activity.AppSelectionActivity" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".broadcastreceiver.MyBroadcastReciever">
+            <intent-filter>
+                <action android:name="com.imquit.Custom" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activity.DeleteMultipleActivity"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">I\'M Quit</string>
+    <string-array name="interval">
+        <item>DAILY</item>
+        <item>WEEKLY</item>
+        <item>MONTHLY</item>
+        <item>YEAR</item>
+    </string-array>
+</resources>
+
